@@ -1,5 +1,7 @@
+
 import java.util.ArrayList;
 import java.util.Date;
+
 
 public class Menu {
     public ArrayList<MenuItem> name;
@@ -26,7 +28,11 @@ public class Menu {
     public int getMenuId(){
         return menuId;
     }
-    /*
-    Make methods ADD, DELETE
-     */
+
+    public void addMenuItem(ArrayList<MenuItem> menu, MenuItem menuItem){
+        menu.add(menuItem);
+    }
+    public void deleteMenuItem(ArrayList<MenuItem> menu, MenuItem menuItem){
+        menu.remove(menuItem);
+    }
 }

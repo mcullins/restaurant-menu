@@ -1,6 +1,8 @@
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        MenuItem pizza = new MenuItem("Pizza", 10.00);
+        Menu altMenu = new Menu();
+        altMenu.addMenuItem(altMenu, pizza);
     }
 }
