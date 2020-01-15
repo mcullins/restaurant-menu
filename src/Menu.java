@@ -1,6 +1,4 @@
 
-import javax.sound.midi.MidiUnavailableException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -37,10 +35,13 @@ public class Menu {
     public void deleteMenuItem(MenuItem menuItem){
         item.remove(menuItem);
     }
-    public void toPrint(){
+    public void printEntireMenu(){
         for(MenuItem itemName : item) {
            System.out.println(itemName.getName() + " $" + itemName.getPrice() +
                    "(Last Updated: " + itemName.getLastUpdated() + ").");
         }
+    }
+    public void printSingleItem(MenuItem name){
+        System.out.println((name.getName() + "- Price $" + name.getPrice()));
     }
 }
