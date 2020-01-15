@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Date;
 
 public class MenuItem {
@@ -18,28 +19,58 @@ public class MenuItem {
         this.added = new Date();
         this.lastUpdated = new Date();
     }
-    /*
+
     public MenuItem(String name, Double price){
-        this(name, price);
+        this(name, price, null, null);
     }
     public MenuItem(String name, Double price, String category){
-        this(name, price, category);
+        this(name, price, category, null);
     }
 
-    getter =
-    price
-    des
-    category
-    added
-    new item dur
-    last updated
-    name
 
-    setter =
-    price
-    des
-    category
-    name
-     */
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+        this.lastUpdated = new Date();
+    }
+
+    public Double getPrice(){
+        return price;
+    }
+    public void setPrice(Double price){
+        this.price = price;
+        this.lastUpdated = new Date();
+    }
+
+    public String getDescription(){
+        return description;
+    }
+    public void setDescription(String description){
+        this.description = description;
+        this.lastUpdated = new Date();
+    }
+
+    public String getCategory(){
+        return category;
+    }
+    public void setCategory(String category){
+        this.category = category;
+        this.lastUpdated = new Date();
+    }
+
+
+    public Date getAdded(){
+        return added;
+    }
+
+    public int getNewItemDuration(){
+        return newItemDuration;
+    }
+
+    public Date getLastUpdated(){
+        return  lastUpdated;
+    }
 
 }
