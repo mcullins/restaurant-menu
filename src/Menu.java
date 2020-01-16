@@ -39,6 +39,9 @@ public class Menu {
         for(MenuItem itemName : item) {
            System.out.println(itemName.getName() + " $" + itemName.getPrice() +
                    "(Last Updated: " + itemName.getLastUpdated() + ").");
+           System.out.println("Added date " + itemName.getAdded());
+           System.out.println("New Status " + itemName.getNewStatus());
+           System.out.println(itemName.getAdded().compareTo(itemName.getLastUpdated()));
         }
     }
     public void printSingleItem(MenuItem name){

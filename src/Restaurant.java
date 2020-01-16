@@ -1,3 +1,7 @@
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 public class Restaurant {
 
     public static void main(String[] args) {
@@ -8,6 +12,10 @@ public class Restaurant {
         altMenu.addMenuItem(salad);
         altMenu.printEntireMenu();
         altMenu.printSingleItem(pizza);
+        GregorianCalendar newPizzaDateGreg = new GregorianCalendar(2019, 5, 5);
+        Date newPizzaDate = newPizzaDateGreg.getTime();
+        pizza.setAdded(newPizzaDate);
+        altMenu.printEntireMenu();
 
     }
 }

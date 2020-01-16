@@ -1,5 +1,7 @@
-import java.time.LocalDate;
+
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class MenuItem {
     private String name;
@@ -11,6 +13,7 @@ public class MenuItem {
     private int newItemDuration = 30;
     private Date lastUpdated;
 
+
     public MenuItem(String name, Double price, String description, String category){
         this.name = name;
         this.price = price;
@@ -18,6 +21,16 @@ public class MenuItem {
         this.category = category;
         this.added = new Date();
         this.lastUpdated = new Date();
+
+        Calendar c= new GregorianCalendar();
+        c.add(Calendar.DATE, 30);
+        added=c.getTime();
+
+        if (added.compareTo(lastUpdated) > 0){
+            this.newStatus = false;
+        } else {
+            this.newStatus = true;
+        }
     }
 
     public MenuItem(String name, Double price){
@@ -59,7 +72,9 @@ public class MenuItem {
         this.category = category;
         this.lastUpdated = new Date();
     }
-
+    public boolean getNewStatus(){
+        return newStatus;
+    }
 
     public Date getAdded(){
         return added;
@@ -70,7 +85,11 @@ public class MenuItem {
     }
 
     public Date getLastUpdated(){
-        return  lastUpdated;
+        return lastUpdated;
+    }
+
+    public void setAdded(Date dateAdded){
+        this.added = dateAdded;
     }
 
 }
