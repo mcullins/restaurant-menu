@@ -1,6 +1,8 @@
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 public class Menu {
@@ -37,14 +39,23 @@ public class Menu {
     }
     public void printEntireMenu(){
         for(MenuItem itemName : item) {
-           System.out.println(itemName.getName() + " $" + itemName.getPrice() +
-                   "(Last Updated: " + itemName.getLastUpdated() + ").");
-           System.out.println("Added date " + itemName.getAdded());
-           System.out.println("New Status " + itemName.getNewStatus());
-           System.out.println(itemName.getAdded().compareTo(itemName.getLastUpdated()));
+           System.out.println(itemName.getMenuItemId() + " " + itemName.getName() + " $" + itemName.getPrice() +
+                   itemName.getCategory() + ".");
         }
+
     }
     public void printSingleItem(MenuItem name){
         System.out.println((name.getName() + "- Price $" + name.getPrice()));
     }
+
+    public ArrayList<MenuItem> getMenu() {
+        return item;
+    }
+//@Override
+//    public String toString(){
+    //    return item.getName();
+  //  }
+
 }
+
+

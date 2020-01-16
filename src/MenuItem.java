@@ -1,16 +1,18 @@
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class MenuItem {
+    private int menuItemId = 1;
     private String name;
     private Double price;
     private String description;
     private String category;
     private Boolean newStatus;
     private Date added;
-    private int newItemDuration = 30;
+    private Date newItemDuration;
     private Date lastUpdated;
 
 
@@ -21,12 +23,13 @@ public class MenuItem {
         this.category = category;
         this.added = new Date();
         this.lastUpdated = new Date();
+        this.menuItemId++;
 
         Calendar c= new GregorianCalendar();
-        c.add(Calendar.DATE, 30);
-        added=c.getTime();
+        c.add(Calendar.DATE, -30);
+        newItemDuration=c.getTime();
 
-        if (added.compareTo(lastUpdated) > 0){
+        if (added.getTime() > newItemDuration.getTime()){
             this.newStatus = false;
         } else {
             this.newStatus = true;
@@ -80,7 +83,7 @@ public class MenuItem {
         return added;
     }
 
-    public int getNewItemDuration(){
+    public Date getNewItemDuration(){
         return newItemDuration;
     }
 
@@ -91,5 +94,7 @@ public class MenuItem {
     public void setAdded(Date dateAdded){
         this.added = dateAdded;
     }
+
+    public int getMenuItemId(){ return menuItemId; }
 
 }
